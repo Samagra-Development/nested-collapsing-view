@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="80dp">
+
+    <!--<View
+        android:id="@+id/even_line"
+        android:layout_width="1dp"
+        android:layout_height="40dp"
+        android:visibility="gone"
+        android:layout_above="@+id/dot_notif"
+        android:layout_marginLeft="24.2dp"
+        android:layout_marginStart="24.2dp"
+        android:background="@color/color_md_grey_500" />-->
+
+    <ImageView
+        android:id="@+id/dot_notif"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="20dp"
+        android:layout_marginStart="20dp"
+        android:src="@drawable/ic_dot_grey_small" />
+
+    <!--<View
+        android:id="@+id/odd_line"
+        android:layout_width="1dp"
+        android:layout_height="40dp"
+        android:layout_below="@+id/dot_notif"
+        android:layout_marginLeft="24.2dp"
+        android:layout_marginStart="24.2dp"
+        android:visibility="gone"
+        android:background="@color/color_md_grey_500" />-->
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/dot_notif"
+        android:layout_alignStart="@+id/dot_notif"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="25dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginRight="40dp">
+
+        <TextView
+            android:id="@+id/notification_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:ellipsize="end"
+            android:fontFamily="@font/avenir"
+            android:maxLines="1"
+            android:text="Job Finished by Tractor 1"
+            android:textColor="@color/black"
+            android:textSize="13dp" />
+
+        <TextView
+            android:id="@+id/notification_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/notification_text"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/avenir"
+            android:textColor="@color/color_md_grey_600"
+            android:text="8:00 am"
+            android:textSize="12dp" />
+
+        <TextView
+            android:id="@+id/notification_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/notification_text"
+            android:layout_marginLeft="25dp"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="10dp"
+            android:layout_toEndOf="@+id/notification_time"
+            android:layout_toRightOf="@+id/notification_time"
+            android:fontFamily="@font/avenir"
+            android:text="25 May, 2018"
+            android:textColor="@color/color_md_grey_600"
+            android:textSize="12dp" />
+
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/color_md_grey_300" />
+
+    <ImageButton
+        android:id="@+id/notification_delete"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@android:color/transparent"
+        android:src="@drawable/ic_cross_grey_28dp" />
+
+</RelativeLayout>
