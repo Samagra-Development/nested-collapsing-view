@@ -97,18 +97,4 @@ public class NestedCollapsingView extends LinearLayout {
                 new HierarchyViewAdapter<>(viewItems, rootLayoutRes, holderSupplier);
         recyclerView.setAdapter(adapter);
     }
-
-    public void addLevelItemLayer(BindedLevelItem[] bindedLevelItems, CustomViewHolder customViewHolder, int levelLayout) {
-        if (currentLevel == 0) {
-            View view = LayoutInflater.from(context).inflate(R.layout.recycler_view_template, categoryHolder, false);
-            categoryHolder.addView(view);
-            RecyclerView recyclerView = view.findViewById(R.id.recycler_view);
-            LinearLayoutManager linearLayoutManager = new LinearLayoutManager(context);
-            linearLayoutManager.setOrientation(RecyclerView.VERTICAL);
-            recyclerView.setLayoutManager(linearLayoutManager);
-            LevelItemAdapter<CustomViewHolder> levelItemAdapter = new LevelItemAdapter<>(bindedLevelItems, levelLayout, customViewHolder);
-            recyclerView.setAdapter(levelItemAdapter);
-        }
-        currentLevel++;
-    }
 }
