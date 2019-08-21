@@ -19,6 +19,7 @@ import java.util.ArrayList;
 public class SampleCategoryViewHolder extends AbstractBindedViewHolder {
 
     private View itemView;
+    private View addedView = null;
 
     SampleCategoryViewHolder(@NonNull View itemView) {
         super(itemView);
@@ -41,7 +42,16 @@ public class SampleCategoryViewHolder extends AbstractBindedViewHolder {
     @Override
     public void addViewProperly(View view) {
         ViewGroup.LayoutParams layoutParams = new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        addedView = view;
         ((ViewGroup) itemView).addView(view, layoutParams);
+    }
+
+    @Override
+    public void removeAddedView() {
+        if (addedView != null) {
+            ((ViewGroup) itemView).removeView(addedView);
+            addedView = null;
+        }
     }
 
     @Override

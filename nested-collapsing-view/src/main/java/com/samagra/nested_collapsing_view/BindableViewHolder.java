@@ -14,6 +14,8 @@ public interface BindableViewHolder {
 
     void addViewProperly(View view);
 
+    void removeAddedView();
+
     void setupRecyclerView(ArrayList<HierarchyViewItem> viewItems, RecyclerView recyclerView, int depth);
 
     int getLayoutRes();

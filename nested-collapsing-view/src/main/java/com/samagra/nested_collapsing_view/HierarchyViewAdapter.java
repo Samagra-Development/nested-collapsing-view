@@ -61,8 +61,11 @@ public class HierarchyViewAdapter<VH extends AbstractBindedViewHolder> extends R
                         holder.setupRecyclerView(hierarchyViewItem.getChildren(),
                                 (RecyclerView) recyclerTemplate.findViewById(R.id.recycler_view),
                                 ++depth);
+                        expanded = true;
                     } else {
                         // TODO : Remove the expanded recycler view
+                        holder.removeAddedView();
+                        expanded = false;
                     }
                 }
             });
