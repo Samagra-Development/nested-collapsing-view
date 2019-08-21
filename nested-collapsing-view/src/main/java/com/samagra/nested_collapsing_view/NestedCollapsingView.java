@@ -12,11 +12,6 @@ import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.samagra.nested_collapsing_view.test.AbstractBindedViewHolder;
-import com.samagra.nested_collapsing_view.test.HierarchyViewAdapter;
-import com.samagra.nested_collapsing_view.test.HierarchyViewItem;
-import com.samagra.nested_collapsing_view.test.ViewHolderSupplier;
-
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;

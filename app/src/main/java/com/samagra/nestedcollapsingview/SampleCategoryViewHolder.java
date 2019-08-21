@@ -9,10 +9,10 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.samagra.nested_collapsing_view.test.AbstractBindedViewHolder;
-import com.samagra.nested_collapsing_view.test.HierarchyViewAdapter;
-import com.samagra.nested_collapsing_view.test.HierarchyViewItem;
-import com.samagra.nested_collapsing_view.test.ViewHolderSupplier;
+import com.samagra.nested_collapsing_view.AbstractBindedViewHolder;
+import com.samagra.nested_collapsing_view.HierarchyViewAdapter;
+import com.samagra.nested_collapsing_view.HierarchyViewItem;
+import com.samagra.nested_collapsing_view.ViewHolderSupplier;
 
 import java.util.ArrayList;
 

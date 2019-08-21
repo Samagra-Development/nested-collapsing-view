@@ -9,8 +9,8 @@ import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.samagra.nested_collapsing_view.NestedCollapsingView;
-import com.samagra.nested_collapsing_view.test.AbstractBindedViewHolder;
-import com.samagra.nested_collapsing_view.test.ViewHolderSupplier;
+import com.samagra.nested_collapsing_view.AbstractBindedViewHolder;
+import com.samagra.nested_collapsing_view.ViewHolderSupplier;
 
 import org.json.JSONArray;
 import org.json.JSONException;

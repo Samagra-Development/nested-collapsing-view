@@ -1,4 +1,4 @@
-package com.samagra.nested_collapsing_view.test;
+package com.samagra.nested_collapsing_view;
 
 
 import androidx.annotation.NonNull;

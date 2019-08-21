@@ -8,8 +8,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.samagra.nested_collapsing_view.test.AbstractBindedViewHolder;
-import com.samagra.nested_collapsing_view.test.HierarchyViewItem;
+import com.samagra.nested_collapsing_view.AbstractBindedViewHolder;
+import com.samagra.nested_collapsing_view.HierarchyViewItem;
 
 import java.util.ArrayList;
 
