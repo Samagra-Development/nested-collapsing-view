@@ -40,7 +40,8 @@ public class SampleCategoryViewHolder extends AbstractBindedViewHolder {
 
     @Override
     public void addViewProperly(View view) {
-        getViewGroup().addView(view);
+        ViewGroup.LayoutParams layoutParams = new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        ((ViewGroup) itemView).addView(view, layoutParams);
     }
 
     @Override
@@ -54,7 +55,7 @@ public class SampleCategoryViewHolder extends AbstractBindedViewHolder {
                     public SampleItemViewHolder get(View view) {
                         return new SampleItemViewHolder(view);
                     }
-                });
+                }, depth);
         recyclerView.setAdapter(itemAdapter);
     }
 

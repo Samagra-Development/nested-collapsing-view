@@ -19,15 +19,15 @@ public class HierarchyViewAdapter<VH extends AbstractBindedViewHolder> extends R
     private int depth = 0;
     private boolean expanded = false;
 
-    public HierarchyViewAdapter(@NonNull ArrayList<HierarchyViewItem> viewItems, int layoutResForThisLevel,
-                                ViewHolderSupplier<? extends VH> viewHolderSupplier) {
+    HierarchyViewAdapter(@NonNull ArrayList<HierarchyViewItem> viewItems, int layoutResForThisLevel,
+                         ViewHolderSupplier<? extends VH> viewHolderSupplier) {
         this.viewItems = viewItems;
         this.layoutResForThisLevel = layoutResForThisLevel;
         this.viewHolderSupplier = viewHolderSupplier;
     }
 
-    private HierarchyViewAdapter(@NonNull ArrayList<HierarchyViewItem> viewItems, int layoutResForThisLevel,
-                                 ViewHolderSupplier<? extends VH> viewHolderSupplier, int depth) {
+    public HierarchyViewAdapter(@NonNull ArrayList<HierarchyViewItem> viewItems, int layoutResForThisLevel,
+                                ViewHolderSupplier<? extends VH> viewHolderSupplier, int depth) {
         this.viewItems = viewItems;
         this.layoutResForThisLevel = layoutResForThisLevel;
         this.viewHolderSupplier = viewHolderSupplier;
@@ -57,7 +57,7 @@ public class HierarchyViewAdapter<VH extends AbstractBindedViewHolder> extends R
                         // TODO : Inflate and add RecyclerView
                         View recyclerTemplate = LayoutInflater.from(view.getContext()).inflate(
                                 R.layout.recycler_view_template, holder.getViewGroup(), false);
-                        holder.getViewGroup().addView(recyclerTemplate);
+                        holder.addViewProperly(recyclerTemplate);
                         holder.setupRecyclerView(hierarchyViewItem.getChildren(),
                                 (RecyclerView) recyclerTemplate.findViewById(R.id.recycler_view),
                                 ++depth);

@@ -37,7 +37,8 @@ public class SampleItemViewHolder extends AbstractBindedViewHolder {
 
     @Override
     public void addViewProperly(View view) {
-        getViewGroup().addView(view);
+        ViewGroup.LayoutParams layoutParams = new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        ((ViewGroup) itemView).addView(view, layoutParams);
     }
 
     @Override
