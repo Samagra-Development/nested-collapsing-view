@@ -5,9 +5,9 @@ import android.view.View;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-abstract class CustomViewHolder extends RecyclerView.ViewHolder implements CollapsingViewHolder {
+public abstract class AbstractBindedViewHolder extends RecyclerView.ViewHolder implements BindableViewHolder {
 
-    CustomViewHolder(@NonNull View itemView) {
+    public AbstractBindedViewHolder(@NonNull View itemView) {
         super(itemView);
     }
 }

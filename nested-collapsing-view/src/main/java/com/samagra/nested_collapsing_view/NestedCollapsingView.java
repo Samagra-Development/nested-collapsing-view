@@ -12,7 +12,13 @@ import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-public class NestedCollapsingView extends View {
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.ArrayList;
+
+public class NestedCollapsingView extends LinearLayout {
 
     private Context context;
     private int currentLevel = 0;
@@ -35,6 +41,7 @@ public class NestedCollapsingView extends View {
     private void initView(Context context, AttributeSet attributeSet) {
         this.context = context;
         loadPreferencesFromAttributes(attributeSet);
+        LayoutInflater.from(context).inflate(R.layout.layout_collapsing_view, this);
         categoryHolder = findViewById(R.id.category_holder);
     }
 
@@ -58,17 +65,31 @@ public class NestedCollapsingView extends View {
         }
     }
 
-    public void addLevelItemLayer(BindedLevelItem[] bindedLevelItems, CustomViewHolder customViewHolder, int levelLayout) {
-        if (currentLevel == 0) {
-            View view = LayoutInflater.from(context).inflate(R.layout.recycler_view_template, categoryHolder, false);
-            categoryHolder.addView(view);
-            RecyclerView recyclerView = view.findViewById(R.id.recycler_view);
-            LinearLayoutManager linearLayoutManager = new LinearLayoutManager(context);
-            linearLayoutManager.setOrientation(RecyclerView.VERTICAL);
-            recyclerView.setLayoutManager(linearLayoutManager);
-            LevelItemAdapter<CustomViewHolder> levelItemAdapter = new LevelItemAdapter<>(bindedLevelItems, levelLayout, customViewHolder);
-            recyclerView.setAdapter(levelItemAdapter);
+    public void initialize(JSONArray jsonArray, ViewHolderSupplier<? extends AbstractBindedViewHolder> viewHolderSupplier,
+                           int rootLayoutRes) {
+        ArrayList<HierarchyViewItem> hierarchyViewItems = new ArrayList<>();
+        try {
+            for (int i = 0; i < jsonArray.length(); i++) {
+                JSONObject jsonObject = jsonArray.getJSONObject(i);
+                hierarchyViewItems.add(new HierarchyViewItem(jsonObject.getJSONObject(HierarchyViewItem.KEYS_VIEW_MAPPING),
+                        jsonObject.getJSONArray(HierarchyViewItem.KEYS_CHILDREN_ARRAY)));
+            }
+            inflateRootRecyclerView(hierarchyViewItems, rootLayoutRes, viewHolderSupplier);
+        } catch (JSONException e) {
+            e.printStackTrace();
         }
-        currentLevel++;
+    }
+
+    private void inflateRootRecyclerView(ArrayList<HierarchyViewItem> viewItems, int rootLayoutRes,
+                                         ViewHolderSupplier<? extends AbstractBindedViewHolder> holderSupplier) {
+        View view = LayoutInflater.from(context).inflate(R.layout.recycler_view_template, categoryHolder, false);
+        categoryHolder.addView(view);
+        RecyclerView recyclerView = view.findViewById(R.id.recycler_view);
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(context);
+        linearLayoutManager.setOrientation(RecyclerView.VERTICAL);
+        recyclerView.setLayoutManager(linearLayoutManager);
+        HierarchyViewAdapter<AbstractBindedViewHolder> adapter =
+                new HierarchyViewAdapter<>(viewItems, rootLayoutRes, holderSupplier);
+        recyclerView.setAdapter(adapter);
     }
 }
