@@ -1,0 +1,64 @@
+{
+    "data": [
+        {
+            "view_mapping": {
+                "a": 2,
+                "b": 4,
+                "c": "psx95"
+            },
+            "children": [
+                {
+                    "view_mapping": {
+                        "aq": 2,
+                        "bd": 4,
+                        "cd": "psx95"
+                    },
+                    "children": [
+                        {
+                            "view_mapping": {
+                                "aq": 2,
+                                "bd": 4,
+                                "cd": "psx95"
+                            },
+                            "children": []
+                        }
+                    ]
+                },
+                {
+                    "view_mapping": {
+                        "aq": 25,
+                        "bd": 432,
+                        "cd": "psx9501"
+                    },
+                    "children": []
+                }
+            ]
+        },
+        {
+            "view_mapping": {
+                "a": 20,
+                "b": 43,
+                "c": "psx"
+            },
+            "children": []
+        },
+        {
+            "view_mapping": {
+                "a": 2021,
+                "b": 432,
+                "c": "psxwa"
+            },
+            "children": [
+                {
+                    "view_mapping": {
+                        "aq": 245,
+                        "bd": 467,
+                        "cd": "psx95scsa"
+                    },
+                    "children": []
+                }
+            ]
+        }
+    ],
+    "metadata": {}
+}
