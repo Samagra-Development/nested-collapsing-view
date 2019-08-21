@@ -17,7 +17,7 @@ public class SampleItemViewHolder extends AbstractBindedViewHolder {
 
     private View itemView;
 
-    public SampleItemViewHolder(@NonNull View itemView) {
+    SampleItemViewHolder(@NonNull View itemView) {
         super(itemView);
         this.itemView = itemView;
     }

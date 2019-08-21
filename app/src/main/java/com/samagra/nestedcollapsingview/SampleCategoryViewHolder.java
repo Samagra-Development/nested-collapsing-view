@@ -20,7 +20,7 @@ public class SampleCategoryViewHolder extends AbstractBindedViewHolder {
 
     private View itemView;
 
-    public SampleCategoryViewHolder(@NonNull View itemView) {
+    SampleCategoryViewHolder(@NonNull View itemView) {
         super(itemView);
         this.itemView = itemView;
     }

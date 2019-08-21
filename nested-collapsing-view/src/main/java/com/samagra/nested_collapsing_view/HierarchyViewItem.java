@@ -13,12 +13,12 @@ import java.util.Iterator;
 
 public class HierarchyViewItem {
 
-    public static final String KEYS_VIEW_MAPPING = "view_mapping";
-    public static final String KEYS_CHILDREN_ARRAY = "children";
+    static final String KEYS_VIEW_MAPPING = "view_mapping";
+    static final String KEYS_CHILDREN_ARRAY = "children";
     private HashMap<String, Object> viewMapping;
     private ArrayList<HierarchyViewItem> children;
 
-    public HierarchyViewItem(@NonNull JSONObject viewMapping, @NonNull JSONArray children) {
+    HierarchyViewItem(@NonNull JSONObject viewMapping, @NonNull JSONArray children) {
         try {
             this.viewMapping = convertJSONObjectToHashMap(viewMapping);
             populateChildrenArray(children);
@@ -54,11 +54,11 @@ public class HierarchyViewItem {
         }
     }
 
-    public HashMap<String, Object> getViewMapping() {
+    HashMap<String, Object> getViewMapping() {
         return viewMapping;
     }
 
-    public ArrayList<HierarchyViewItem> getChildren() {
+    ArrayList<HierarchyViewItem> getChildren() {
         return children;
     }
 }
